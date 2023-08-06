@@ -51,7 +51,7 @@ function Auth() {
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover ">
       <div className="bg-black w-full h-full lg:bg-opacity-50 ">
         <nav>
-          <img src="/images/logo.png" alt="Logo" className="h-12" />
+          <img src="/images/logo.png" alt="Logo" className="h-12"  />
         </nav>
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
@@ -92,7 +92,7 @@ function Auth() {
               {varient}
             </button>
             <div className="flex flex-row gap-4 mt-8 justify-center">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover: opacity-80 transition">
+              <div onClick={() => signIn('google', {callbackUrl: '/'})} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover: opacity-80 transition">
               <FcGoogle size={38} />
               </div>
               <div onClick={() => signIn('github', {callbackUrl: '/'})} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover: opacity-80 transition">
