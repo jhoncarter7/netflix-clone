@@ -5,6 +5,7 @@ import { getSession, signOut } from 'next-auth/react'
 import { Inter } from 'next/font/google'
 import useCurrentUser from '@/hooks/useCurrentUser';
 import Navbar from '@/components/Navbar';
+import BillBord from '@/components/billBord';
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps(context: NextPageContext) {
@@ -27,5 +28,6 @@ export default function Home() {
   const {data: user} = useCurrentUser();
   return <>
   <Navbar/>
+  <BillBord/>
   </>
 }
