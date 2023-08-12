@@ -9,14 +9,14 @@ if(req.method !== 'GET'){
  
 await serverAuth(req)
 const movieCount  = await prismadb.movie.count()
-console.log('moviecount hai', movieCount)
+
 const randomIndex = Math.floor(Math.random() * movieCount)
-console.log('randomIndex hai', randomIndex)
+
 const randomMovie = await prismadb.movie.findMany({
     take: 1,
     skip: randomIndex
 })
-console.log('randomMovie hai', randomMovie)
+
 return res.status(200).json(randomMovie[0])
 }catch(err){
 console.log(err)
