@@ -10,7 +10,6 @@ if(req.method !== "GET"){
 try {
     await serverAuth(req)
     const movies = await prismadb.movie.findMany()
-    console.log('randomMov', movies)
     return res.status(200).json(movies)
 } catch (error) {
     console.log(error)

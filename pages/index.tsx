@@ -32,7 +32,7 @@ export default function Home() {
   <Navbar/>
   <BillBord/>
   <div className='pb-40'>
-    <MovieList data={movies} title='trending'/>
+    <MovieList data={movies} title='Trending Now'/>
   </div>
   </>
 }
