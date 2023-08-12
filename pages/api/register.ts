@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       console.log('user extisted')
         return res.status(422).json({error: 'Email taken'});
     }
-    const hashedPassword = await bcrypt.hash(password, 12)
+    const hashedPassword = await bcrypt.hash(password, 13)
 
     const user = await prismadb.user.create({
         data: {

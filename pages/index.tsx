@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import BillBord from '@/components/BillBord';
 import MovieList from '@/components/MovieList';
 import useMovieList from '@/hooks/useMovieList';
+import useFavorite from '@/hooks/useFavorite';
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps(context: NextPageContext) {
@@ -27,12 +28,14 @@ export async function getServerSideProps(context: NextPageContext) {
 
 export default function Home() {
  const {data: movies = []} = useMovieList()
+ const {data: favorite = []} = useFavorite()
  console.log('randomMovie hai', movies)
   return <>
   <Navbar/>
   <BillBord/>
   <div className='pb-40'>
     <MovieList data={movies} title='Trending Now'/>
+    <MovieList data={favorite} title='My List'/>
   </div>
   </>
 }
